@@ -1,0 +1,30 @@
+<%= form_for @art, :html => {:multipart => true} do |f| %>
+  <% if @art.errors.any? %>
+  <div class="alert alert-dismissable alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <ul>
+      <% @art.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <hr />
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :artist %><br />
+    <%= f.text_field :artist %>
+  </p>
+  <p>
+    <%= f.label :blurb %><br />
+    <%= f.text_field :blurb %>
+  </p>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <hr />
+  <p><%= f.submit %></p>
+<% end %>

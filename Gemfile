@@ -12,6 +12,9 @@ gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'owlcarousel-rails', '~> 1.1.3.3'
 
+gem 'rmagick'
+gem 'carrierwave'
+
 group :development, :test do
   gem 'sqlite3'
 end
