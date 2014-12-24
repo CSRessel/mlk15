@@ -1,4 +1,6 @@
 class WorkshopsController < ApplicationController
+  before_filter :require_admin, only:[:new, :create, :destroy]
+
   def new
     @workshop = Workshop.new
   end
@@ -27,4 +29,16 @@ class WorkshopsController < ApplicationController
       redirect_to workshops_path
     end
   end
+
+  private
+    def workshop_params
+      params.require(:workshop).permit(:title, :author, :blurb)
+    end
+
+    def require_admin
+      if cookies[:AUTH] != ENV['admin_secret']
+        flash[:error] = 'access denied'
+        redirect_to root_path
+      end
+    end
 end

@@ -1,4 +1,6 @@
 class ArtsController < ApplicationController
+  before_filter :require_admin, only:[:new, :create, :destroy]
+
   def new
     @art = Art.new
   end
@@ -32,5 +34,12 @@ class ArtsController < ApplicationController
 
     def art_params
       params.require(:art).permit(:title, :artist, :blurb, :image, :remote_image_url)
+    end
+
+    def require_admin
+      if cookies[:AUTH] != ENV['admin_secret']
+        flash[:error] = 'access denied'
+        redirect_to root_path
+      end
     end
 end

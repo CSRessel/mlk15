@@ -14,6 +14,7 @@ gem 'owlcarousel-rails', '~> 1.1.3.3'
 
 gem 'rmagick'
 gem 'carrierwave'
+gem 'figaro'
 
 group :development, :test do
   gem 'sqlite3'
