@@ -1,16 +1,18 @@
-<script language="JavaScript">
-  cookie_name = "AUTH";
-  var YouEntered;
+<div class="well well-lg">
+  <script language="JavaScript">
+    cookie_name = "AUTH";
+    var YouEntered;
 
-  function putCookie() {
-    YouEntered=document.cf.cfd.value;
-    document.cookie=cookie_name+"="+YouEntered+";";
-    window.location = "";
-  }
-</script>
+    function putCookie() {
+      YouEntered=document.cf.cfd.value;
+      document.cookie=cookie_name+"="+YouEntered+";";
+      window.location = "";
+    }
+  </script>
 
-<form NAME="cf">
-  Plea input the auth token provided by the administrator:<br />
-  <input type="text" name="cfd" size="20">
-  <input type="button" value="submit password" onClick="putCookie()">
-</form>
+  <form NAME="cf">
+    Plea input the auth token provided by the administrator:<br />
+    <input type="text" name="cfd" size="20">
+    <input type="button" value="submit password" onClick="putCookie()">
+  </form>
+</div>

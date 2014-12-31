@@ -1,9 +1,23 @@
-<%#<div class="galleryItem">%>
-  <%#<%= image_tag art.image_url(:thumb).to_s ><br />%>
-  <%#<h3><%= art.title ></h3>%>
-  <%#<p class="grayed"><%= art.artist ></p>%>
-<%#</div>%>
-
-<a href="<%= art.image_url %>" title='"<%= art.title %>" by <%= art.artist %>' data-gallery>
-  <img src="<%= art.image_url(:thumb) %>" style="margin-bottom: 5px;">
-</a>
+<% if is_admin? %>
+  <div class="container">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-2">
+      <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> delete'), art_path(art), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to delete this art listing?" } %>
+    </div>
+    <div class="col-md-2">
+      <a href="<%= art.image_url.to_s %>">
+        <img src="<%= art.image_url(:thumb).to_s %>" style="margin-bottom: 5px;">
+      </a>
+    </div>
+    <div class="col-md-5">
+      Title: <%= art.title %><br />
+      Artist: <%= art.artist %><br />
+    </div>
+  </div>
+  <hr />
+<% else %>
+  <a href="<%= art.image_url.to_s %>" title='"<%= art.title %>" by <%= art.artist %>' data-gallery>
+    <img src="<%= art.image_url(:thumb).to_s %>" style="margin-bottom: 5px;">
+  </a>
+<% end %>

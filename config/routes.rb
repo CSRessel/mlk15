@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :workshops
 
   get 'video' => 'static_pages#video', as: 'mlk_video'
-  get 'login' => 'static_pages#login', as: 'login'
+  get 'admin' => 'static_pages#login', as: 'login'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

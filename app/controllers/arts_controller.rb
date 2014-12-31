@@ -37,7 +37,7 @@ class ArtsController < ApplicationController
     end
 
     def require_admin
-      if cookies[:AUTH] != ENV['auth_secret']
+      if !is_admin?
         flash[:alert] = 'access denied'
         redirect_to root_path
       end

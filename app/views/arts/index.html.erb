@@ -3,21 +3,29 @@
 <div class="container">
   <div class="col-md-1">
   </div>
-  <div class="col-md-11">
+  <div class="col-md-5">
     <h1>Art</h1>
     <p>
       optional blurb here?
     </p>
   </div>
+  <div class="col-md-6 text-right">
+    <% if is_admin? %>
+    <br />
+    <br />
+    <%= link_to "Create new art listing", new_art_path, class: "btn btn-primary btn-lg"%>
+    <% end %>
+  </div>
 </div>
 <hr />
-<%#<div class="galleryContainer">%>
-  <%#<%= render partial: "art", collection: @arts %>
-<%#</div>%>
 
-<div id="links" style="float: left;">
+<% if is_admin? %>
   <%= render partial: "art", collection: @arts %>
-</div>
+<% else %>
+  <div id="links" style="float: left;">
+    <%= render partial: "art", collection: @arts %>
+  </div>
+<% end %>
 
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
