@@ -30,3 +30,6 @@ doc/
 
 # Ignore the secret tokens file
 /config/secrets.yml
+
+# Ignore the images
+/public/uploads
