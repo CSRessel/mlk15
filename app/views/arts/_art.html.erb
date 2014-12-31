@@ -1,5 +1,9 @@
-<hr />
-Title: <%= art.title %><br />
-By: <%= art.artist %><br />
-<%= image_tag art.image_url.to_s %><br />
-About: <%= art.blurb %><br />
+<%#<div class="galleryItem">%>
+  <%#<%= image_tag art.image_url(:thumb).to_s ><br />%>
+  <%#<h3><%= art.title ></h3>%>
+  <%#<p class="grayed"><%= art.artist ></p>%>
+<%#</div>%>
+
+<a href="<%= art.image_url %>" title='"<%= art.title %>" by <%= art.artist %>' data-gallery>
+  <img src="<%= art.image_url(:thumb) %>">
+</a>

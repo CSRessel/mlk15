@@ -11,6 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require owl.carousel
+
+//= require './carousel.js'
+
 //= require turbolinks
-//= require_tree .
+
+//= require bootstrap
+
+//= require bootstrap/load-image.min
+//= require bootstrap/image-gallery.min

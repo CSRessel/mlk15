@@ -8,7 +8,7 @@ class WorkshopsController < ApplicationController
   def create
     @workshop = Workshop.new(workshop_params)
     if @workshop.save
-      flash[:success] = 'new workshop listing created'
+      flash[:notice] = 'new workshop listing created'
       redirect_to workshops_path
     else
       render 'new '
@@ -22,10 +22,10 @@ class WorkshopsController < ApplicationController
   def destroy
     @workshop = Workshop.find(params[:id])
     if @workshop.destroy
-      flash[:success] = 'workshop listing deleted'
+      flash[:notice] = 'workshop listing deleted'
       redirect_to workshops_path
     else
-      flash[:error] = 'unable to delete workshop listing'
+      flash[:alert] = 'unable to delete workshop listing'
       redirect_to workshops_path
     end
   end
@@ -36,8 +36,8 @@ class WorkshopsController < ApplicationController
     end
 
     def require_admin
-      if cookies[:AUTH] != ENV['admin_secret']
-        flash[:error] = 'access denied'
+      if cookies[:AUTH] != ENV['auth_secret']
+        flash[:alert] = 'access denied'
         redirect_to root_path
       end
     end
