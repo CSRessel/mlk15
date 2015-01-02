@@ -1,7 +1,24 @@
-<hr />
-<hr />
-<div class="well well-lg">
-  Title: <%= workshop.title %><br />
-  By: <%= workshop.author %><br />
-  About: <%= workshop.blurb %><br />
-</div>
+<% if is_admin? %>
+  <div class="container">
+    <div class="col-md-4 text-right">
+      <br />
+      <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> delete'), workshop_path(workshop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to delete this workshop listing?" } %>
+    </div>
+    <div class="col-md-8 text-left">
+      <p>
+        Title: <strong><%= workshop.title %></strong><br />
+        Author: <strong><%= workshop.author %></strong><br />
+        Description: <strong><%= workshop.blurb %></strong>
+      </p>
+    </div>
+  </div>
+  <hr />
+<% else %>
+  <div class="well well-lg">
+    <h4><%= workshop.title %></h4>
+    <h6 class="grayed"><%= workshop.author %></h6>
+    <hr />
+    <%= workshop.blurb %><br />
+  </div>
+  <hr />
+<% end %>
