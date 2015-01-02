@@ -32,4 +32,4 @@ doc/
 /config/secrets.yml
 
 # Ignore the images
-#/public/uploads
+/public/uploads
