@@ -1,3 +1,17 @@
 // Place all the styles related to the workshops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  position: relative;
+}
+
+.affix {
+  top: 40px !important;
+}
+
+@media(max-width: 1200px) {
+  #myAffix {
+    position: relative !important;
+  }
+}

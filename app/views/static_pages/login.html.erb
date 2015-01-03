@@ -7,12 +7,13 @@
       YouEntered=document.cf.cfd.value;
       document.cookie=cookie_name+"="+YouEntered+";";
       window.location = "";
+      return false;
     }
   </script>
 
-  <form NAME="cf">
+  <form NAME="cf" onsubmit="return putCookie()">
     Please input the auth token provided by the administrator:<br />
-    <input type="text" name="cfd" size="20">
-    <input type="button" value="submit password" onClick="putCookie()">
+    <hr />
+    <input type="text" name="cfd" size="20"> &nbsp; <input type="button" value="submit password" class="btn btn-primary" onClick="return putCookie()">
   </form>
 </div>

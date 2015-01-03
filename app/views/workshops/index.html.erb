@@ -1,20 +1,58 @@
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function () {
+
+/*
+* Clamped-width.
+* Usage:
+*  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+*
+* Author: LV
+*/
+$('[data-clampedwidth]').each(function () {
+    var elem = $(this);
+    var parentPanel = elem.data('clampedwidth');
+    var resizeFn = function () {
+        var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+        elem.css('width', sideBarNavWidth);
+    };
+
+    resizeFn();
+    $(window).resize(resizeFn);
+});
+
+});
+</script>
+
 <div class="container">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-5">
-    <h1>Workshops</h1>
-    <p>
-      optional blurb here?
-    </p>
-  </div>
-  <div class="col-md-6 text-right">
-    <% if is_admin? %>
-    <br />
-    <br />
-    <%= link_to "Create new workshop listing", new_workshop_path, class: "btn btn-primary btn-lg"%>
-    <% end %>
+  <div class="row">
+    <div class="col-md-3 myParent sidenav">
+      <ul data-spy="affix" data-offset-top="70" id="myAffix" class="list-group" data-clampedwidth=".myParent">
+        <% @workshops.each do |workshop| %>
+        <a href="#<%= workshop.title.gsub(/\s/, '') %>" class="list-group-item"><%= workshop.title %></a>
+        <% end %>
+        <a href="#" class="list-group-item">Back to Top</a>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+          <h1>Workshops</h1>
+          <p>
+            optional blurb here?
+          </p>
+        </div>
+        <div class="col-md-6 text-right">
+          <% if is_admin? %>
+          <br />
+          <br />
+          <%= link_to "Create new workshop listing", new_workshop_path, class: "btn btn-primary btn-lg"%>
+          <% end %>
+        </div>
+      </div>
+      <hr />
+      <%= render partial: "workshop", collection: @workshops %>
+    </div>
   </div>
 </div>
-<hr />
-
-<%= render partial: "workshop", collection: @workshops %>

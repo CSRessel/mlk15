@@ -1,24 +1,22 @@
 <% if is_admin? %>
-  <div class="container">
-    <div class="col-md-4 text-right">
+  <div class="row" id="<%= workshop.title.camelize %>">
+    <div class="col-md-2 text-right">
       <br />
       <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> delete'), workshop_path(workshop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to delete this workshop listing?" } %>
     </div>
-    <div class="col-md-8 text-left">
+    <div class="col-md-10 text-left">
       <p>
-        Title: <strong><%= workshop.title %></strong><br />
-        Author: <strong><%= workshop.author %></strong><br />
-        Description: <strong><%= workshop.blurb %></strong>
+        Title: <%= workshop.title %><br />
+        Author: <%= workshop.author %><br />
+        Description: <%= workshop.blurb %>
       </p>
     </div>
   </div>
-  <hr />
 <% else %>
-  <div class="well well-lg">
+  <div class="well well-lg" id="<%= workshop.title.gsub(/\s/, '') %>">
     <h4><%= workshop.title %></h4>
     <h6 class="grayed"><%= workshop.author %></h6>
     <hr />
     <%= workshop.blurb %><br />
   </div>
-  <hr />
 <% end %>

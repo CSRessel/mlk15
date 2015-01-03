@@ -17,6 +17,7 @@ class WorkshopsController < ApplicationController
 
   def index
     @workshops = Workshop.all
+    @insert_scroll_body_tags = true;
   end
 
   def destroy
