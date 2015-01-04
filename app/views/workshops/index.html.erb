@@ -23,36 +23,57 @@ $('[data-clampedwidth]').each(function () {
 });
 </script>
 
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-5">
+    <h1>Workshops</h1>
+    <p>
+      optional blurb here?
+    </p>
+  </div>
+  <div class="col-md-6 text-right">
+    <% if is_admin? %>
+    <br />
+    <br />
+    <%= link_to "Create new workshop listing", new_workshop_path, class: "btn btn-primary btn-lg"%>
+    <% end %>
+  </div>
+</div>
+<hr />
 <div class="container">
   <div class="row">
-    <div class="col-md-3 myParent sidenav">
-      <ul data-spy="affix" data-offset-top="70" id="myAffix" class="list-group" data-clampedwidth=".myParent">
+    <div class="col-md-3 myParent list-group" role="navigation" id="mySidenav">
+      <ul data-spy="affix" data-offset-top="270" class="nav nav-pills nav-stacked" data-clampedwidth=".myParent">
         <% @workshops.each do |workshop| %>
-        <a href="#<%= workshop.title.gsub(/\s/, '') %>" class="list-group-item"><%= workshop.title %></a>
+          <li role="presentation"><a href="#<%= workshop.title.gsub(/\s/, '') %>" class="list-group-item"><%= workshop.title %></a></li>
         <% end %>
-        <a href="#" class="list-group-item">Back to Top</a>
+        <li role="presentation"><a href="#" class="list-group-item"><b><i class="glyphicon glyphicon-chevron-up"></i>&nbsp;Back to Top</b></a></li>
       </ul>
     </div>
     <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-5">
-          <h1>Workshops</h1>
-          <p>
-            optional blurb here?
-          </p>
-        </div>
-        <div class="col-md-6 text-right">
-          <% if is_admin? %>
-          <br />
-          <br />
-          <%= link_to "Create new workshop listing", new_workshop_path, class: "btn btn-primary btn-lg"%>
-          <% end %>
-        </div>
-      </div>
-      <hr />
       <%= render partial: "workshop", collection: @workshops %>
     </div>
   </div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

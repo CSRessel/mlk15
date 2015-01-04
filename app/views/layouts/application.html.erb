@@ -8,7 +8,7 @@
   <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-<body <%= raw('data-spy="scroll" data-target=".sidenav"') if @insert_scroll_body_tags %>>
+<body <%= raw('data-spy="scroll" data-target="#mySidenav"') if @insert_scroll_body_tags %>>
     <%= render 'layouts/header' %>
     <% if notice %>
     <div class="alert alert-dismissable alert-success">

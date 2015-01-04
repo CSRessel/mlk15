@@ -7,11 +7,11 @@ body {
 }
 
 .affix {
-  top: 40px !important;
+  top: 25px !important;
 }
 
 @media(max-width: 1200px) {
-  #myAffix {
+  #mySidenav {
     position: relative !important;
   }
 }
