@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def login
-    if cookies[:AUTH] == ENV['auth_secret']
+    if is_admin?
       flash[:notice] = 'you are logged in'
       redirect_to root_path
     end

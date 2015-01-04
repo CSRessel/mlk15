@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def is_admin?
-    cookies[:AUTH] == ENV['auth_secret']
+    cookies[:AUTH] == ENV['AUTH_SECRET']
   end
 end

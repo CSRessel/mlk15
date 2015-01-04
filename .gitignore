@@ -28,8 +28,5 @@ doc/
 # Ignore application configuration
 /config/application.yml
 
-# Ignore the secret tokens file
-/config/secrets.yml
-
 # Ignore the images
 /public/uploads
