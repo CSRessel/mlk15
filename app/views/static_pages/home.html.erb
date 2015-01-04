@@ -9,20 +9,10 @@
   </div>
 </div>
 
-<%# carousel %>
-<div class="container">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-10">
-    <div id="main-top-carousel" class="owl-carousel">
-      <%# @front_page.carousel.each do |c| %>
-        <%#= render partial: 'article_in_carousel', locals: { article: Article[c]} %>
-      <%# end %>
-  </div>
-  <div class="col-md-1">
-  </div>
+<%# carousel here %>
+
+<div class="text-center">
+  <%= link_to "watch the video", mlk_video_path, class: "btn btn-lg btn-primary" %>
+  &nbsp;&nbsp;&nbsp;
+  <%= link_to "browse the workshops", workshops_path, class: "btn btn-lg btn-primary" %>
 </div>
-
-<%# music video %>
-
-<%# workshops link %>
