@@ -17,6 +17,6 @@
     <h4><%= workshop.title %></h4>
     <h6 class="grayed"><%= workshop.author %></h6>
     <hr />
-    <%= workshop.blurb %><br />
+    <%= raw(workshop.blurb) %><br />
   </div>
 <% end %>
