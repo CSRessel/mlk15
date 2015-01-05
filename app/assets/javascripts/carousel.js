@@ -1,8 +1,13 @@
-$(function() {
-    $('.owl-carousel').owlCarousel({
-	navigation: true,
-	singleItem: true,
-	slideSpeed: 300,
-	rewindSpeed: 300
-    });
+$(document).ready(function() {
+
+  $("#owl-carousel").owlCarousel({
+
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+
+  });
+
 });

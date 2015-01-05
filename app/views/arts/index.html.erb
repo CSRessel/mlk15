@@ -1,20 +1,22 @@
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 
-<div class="container">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-5">
-    <h1>Art</h1>
-    <p>
-      optional blurb here?
-    </p>
-  </div>
-  <div class="col-md-6 text-right">
-    <% if is_admin? %>
-    <br />
-    <br />
-    <%= link_to "Create new art listing", new_art_path, class: "btn btn-primary btn-lg"%>
-    <% end %>
+<div class="row">
+  <div class="container">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5">
+      <h1>Art</h1>
+      <p>
+        optional blurb here?
+      </p>
+    </div>
+    <div class="col-md-6 text-right">
+      <% if is_admin? %>
+      <br />
+      <br />
+      <%= link_to "Create new art listing", new_art_path, class: "btn btn-primary btn-lg"%>
+      <% end %>
+    </div>
   </div>
 </div>
 <hr />
