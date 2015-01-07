@@ -17,7 +17,7 @@
   </div>
   <hr />
 <% else %>
-  <a href="<%= art.image_url.to_s %>" title='"<%= art.title %>" by <%= art.artist %>' data-gallery>
+  <a href="<%= art.image_url.to_s %>" title='<%= art.title.empty? ? "By #{ art.artist }" : "\"#{ art.title }\" by #{ art.artist }" %>' data-gallery>
     <img src="<%= art.image_url(:thumb).to_s %>" style="margin-bottom: 5px;">
   </a>
 <% end %>

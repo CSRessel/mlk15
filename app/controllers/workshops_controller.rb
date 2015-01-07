@@ -33,7 +33,7 @@ class WorkshopsController < ApplicationController
 
   private
     def workshop_params
-      params.require(:workshop).permit(:title, :author, :blurb)
+      params.require(:workshop).permit(:title, :subtitle, :author, :blurb)
     end
 
     def require_admin
