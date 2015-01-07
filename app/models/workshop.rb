@@ -1,4 +1,3 @@
 class Workshop < ActiveRecord::Base
-  validates :title
-  validates :blurb, presence: true
+  validates :title, presence: true
 end
