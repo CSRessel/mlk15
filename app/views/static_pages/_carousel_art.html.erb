@@ -1,4 +1,4 @@
 <div class="item">
-  <h5><strong><%= art.title %></strong> by <%= art.artist %></h5>
+<h5><%= art.title.empty? ? "By #{ art.artist }" : raw("<strong>#{ art.title }</strong> by #{ art.artist }") %></h5>
   <%= link_to raw("<img src=\"#{ art.image_url(:carousel) }\" alt=\"#{ art.title } by #{ art.artist }\" />"), arts_path %>
 </div>
