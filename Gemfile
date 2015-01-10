@@ -17,6 +17,7 @@ gem 'bootstrap-addons-rails'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'figaro'
+gem 'fog'
 
 group :development, :test do
   gem 'sqlite3'
