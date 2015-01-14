@@ -11,12 +11,19 @@
     </div>
     <% end %>
     <p>
+      Please list the first part of the title (preceding any colon), seperated for use in the sidebar
       <%= f.label :title %><br />
       <%= f.text_field :title %>
     </p>
     <p>
+      Please list the second part of the title for use in th the full workshop listing
       <%= f.label :subtitle %><br />
       <%= f.text_field :subtitle %>
+    </p>
+    <p>
+      Please list meeting time and place here in the form "HH:MM a.m./p.m.; Building, Room"
+      <%= f.label :schedule %><br />
+      <%= f.text_field :schedule %>
     </p>
     <p>
       <%= f.label :author %><br />

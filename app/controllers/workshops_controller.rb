@@ -15,6 +15,20 @@ class WorkshopsController < ApplicationController
     end
   end
 
+  def edit
+    @workshop = Workshop.find(params[:id])
+  end
+
+  def update
+    @workshop = Workshop.find(params[:id])
+    if @workshop.update_attributes(workshop_params)
+      flash[:notice] = 'workshop listing updated'
+      redirect_to workshops_path
+    else
+      render 'edit'
+    end
+  end
+
   def index
     @workshops = Workshop.all
     @insert_scroll_body_tags = true;
@@ -33,7 +47,7 @@ class WorkshopsController < ApplicationController
 
   private
     def workshop_params
-      params.require(:workshop).permit(:title, :subtitle, :author, :blurb)
+      params.require(:workshop).permit(:title, :subtitle, :schedule, :author, :blurb)
     end
 
     def require_admin

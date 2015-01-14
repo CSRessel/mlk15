@@ -4,10 +4,15 @@
       <br />
       <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> delete'), workshop_path(workshop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to delete this workshop listing?" } %>
     </div>
-    <div class="col-md-10 text-left">
+    <div class="col-md-2">
+      <br />
+      <%= link_to raw('<i class="glyphicon glyphicon-pencil"></i> edit'), edit_workshop_path(workshop), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-8 text-left">
       <p>
         Title: <%= workshop.title %><br />
         Subtitle: <%= workshop.subtitle %><br />
+        Schedule: <%= workshop.schedule %><br />
         Author: <%= workshop.author %><br />
         Description: <%= workshop.blurb %>
       </p>
@@ -15,8 +20,8 @@
   </div>
 <% else %>
   <div class="well well-lg" id="<%= workshop.title.gsub(/\s/, '') %>">
-    <h4><%= workshop.title %></h4>
-    <h6 class="grayed"><%= workshop.subtitle %></h6>
+    <h4><%= workshop.title %><%= ": #{ workshop.subtitle }" if workshop.subtitle %></h4>
+    <h6 class="grayed"><%= workshop.schedule %></h6>
     <p class="grayed"><%= workshop.author %></p>
     <hr />
     <%= raw(workshop.blurb) %><br />
