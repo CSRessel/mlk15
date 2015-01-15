@@ -20,7 +20,7 @@
   </div>
 <% else %>
   <div class="well well-lg" id="<%= workshop.title.gsub(/\s/, '') %>">
-    <h4><%= workshop.title %><%= ": #{ workshop.subtitle }" if workshop.subtitle %></h4>
+    <h4><%= raw(workshop.title) %><%= raw(workshop.subtitle) if workshop.subtitle %></h4>
     <h6 class="grayed"><%= workshop.schedule %></h6>
     <p class="grayed"><%= workshop.author %></p>
     <hr />
