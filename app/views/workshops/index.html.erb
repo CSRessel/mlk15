@@ -41,7 +41,7 @@ $('[data-clampedwidth]').each(function () {
 <div class="container">
   <div class="row">
     <div class="col-md-3 myParent list-group" role="navigation" id="mySidenav">
-      <ul data-spy="affix" data-offset-top="270" class="nav nav-pills nav-stacked" data-clampedwidth=".myParent">
+      <ul class="nav nav-pills nav-stacked" data-clampedwidth=".myParent"><!-- data-spy="affix" data-offset-top="270" -->
         <% @workshops.each do |workshop| %>
           <li role="presentation"><a href="#<%= workshop.title.gsub(/\s/, '') %>" class="list-group-item"><%= workshop.title %></a></li>
         <% end %>
